@@ -3,6 +3,8 @@ import { FormEvent, useState, Dispatch, SetStateAction, useEffect } from "react"
 import styled from "styled-components";
 import InputMask from "react-input-mask";
 
+const prefix = '/mobile-app-next-js'
+
 type propsType = {
   curOperator: operatorType;
   setModal: Dispatch<SetStateAction<boolean>>;
@@ -108,7 +110,7 @@ function Modal({ curOperator, setModal }: propsType) {
           <h1>{curOperator.name}</h1>
           <img
             className="m_logo"
-            src={"/images/" + curOperator.logo}
+            src={prefix + "/images/" + curOperator.logo}
             alt="operator logo"
           />
         </TitleWrapper>

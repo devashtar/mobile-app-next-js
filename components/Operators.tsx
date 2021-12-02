@@ -2,6 +2,8 @@ import { Dispatch, SetStateAction, useState } from "react";
 import styled from "styled-components";
 import { listOperatorsType, operatorType } from "../types";
 
+const prefix = '/mobile-app-next-js'
+
 type Dispatcher<S> = Dispatch<SetStateAction<S>>;
 
 type propsType = {
@@ -34,7 +36,7 @@ function Operators({ operators, setModal, setCurOperator }: propsType) {
                 <div>{name}</div>
                 <img
                   className={displayMenu ? "m__logo active" : "m__logo"}
-                  src={"/images/" + logo}
+                  src={prefix + "/images/" + logo}
                   alt="mobile operator"
                 />
               </ListItem>

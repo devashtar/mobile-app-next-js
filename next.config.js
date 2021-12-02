@@ -4,5 +4,6 @@ const isProd = process.env.NODE_ENV === 'production'
 module.exports = {
   reactStrictMode: true,
   exportPathMap: 'out',
-  assetPrefix: isProd ? 'https://devashtar.github.io/mobile-app-next-js' : './'
+  basePath: isProd ? '/mobile-app-next-js' : './',
+  assetPrefix: isProd ? '/mobile-app-next-js' : './'
 }
