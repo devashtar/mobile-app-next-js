@@ -31,6 +31,7 @@ const prefix = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
 const Home: NextPage = () => {
 
+  const [counter, setCounter] = useState(0);
   const [modal, setModal] = useState(false);
   const [curOperator, setCurOperator] = useState({} as operatorType);
 
@@ -50,7 +51,7 @@ const Home: NextPage = () => {
           setModal={setModal}
           setCurOperator={setCurOperator}
         />
-        {modal && <Modal curOperator={curOperator} setModal={setModal} />}
+        {modal && <Modal curOperator={curOperator} setModal={setModal} counter={counter} setCounter={setCounter} />}
       </Wrapper>
     </div>
   );

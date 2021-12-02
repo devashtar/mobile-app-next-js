@@ -8,15 +8,16 @@ const prefix = process.env.NEXT_PUBLIC_BASE_PATH || ''
 type propsType = {
   curOperator: operatorType;
   setModal: Dispatch<SetStateAction<boolean>>;
+  counter: number;
+  setCounter: Dispatch<SetStateAction<number>>;
 };
 
 interface IFiledData {
   [key: string]: number | string;
 }
 
-function Modal({ curOperator, setModal }: propsType) {
+function Modal({ curOperator, setModal, counter, setCounter }: propsType) {
 
-  const [counter, setCounter] = useState(0)
   const [random, setRandom] = useState(false);
   const [content, setContent] = useState({ total: "", tel: "" });
   const [error, setError] = useState({ flag: false, total: "", tel: "" });
