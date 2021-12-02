@@ -89,21 +89,17 @@ function Modal({ curOperator, setModal, counter, setCounter }: propsType) {
       }
     })
       .then(() => {
-        setCounter(state => state+1)
+        const newState = counter + 1;
+        if (newState % 2) {
+          alert('Операция прошла успешно!');
+        } else {
+          alert('Что-то пошло не так!');
+        }
+        setCounter(newState);
+        setModal(state => !state);
       })
       
   };
-
-  useEffect(() => {
-    if (counter !== 0) {
-      if (counter % 2) {
-        alert('Операция прошла успешно!');
-      } else {
-        alert('Что-то пошло не так!');
-      }
-      return setModal(state => !state);
-    }
-  }, [counter, setModal])
 
   return (
     <Container>
