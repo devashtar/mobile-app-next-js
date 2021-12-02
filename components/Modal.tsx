@@ -18,7 +18,6 @@ interface IFiledData {
 
 function Modal({ curOperator, setModal, counter, setCounter }: propsType) {
 
-  const [random, setRandom] = useState(false);
   const [content, setContent] = useState({ total: "", tel: "" });
   const [error, setError] = useState({ flag: false, total: "", tel: "" });
 
@@ -90,19 +89,21 @@ function Modal({ curOperator, setModal, counter, setCounter }: propsType) {
       }
     })
       .then(() => {
-        setRandom(state => !state)
         setCounter(state => state+1)
       })
       
   };
 
   useEffect(() => {
-    if (random ?? counter !== 0) {
-      alert('Операция прошла успешно!');
+    if (counter !== 0) {
+      if (counter % 2) {
+        alert('Операция прошла успешно!');
+      } else {
+        alert('Что-то пошло не так!');
+      }
       return setModal(state => !state);
-    } else if (counter !== 0) return alert('Что-то пошло не так!');
-    
-  }, [random, counter, setModal])
+    }
+  }, [counter, setModal])
 
   return (
     <Container>
