@@ -27,7 +27,7 @@ const operators = [
   }
 ];
 
-const prefix = '/mobile-app-next-js'
+const prefix = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
 const Home: NextPage = () => {
 

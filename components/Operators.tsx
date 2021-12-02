@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction, useState } from "react";
 import styled from "styled-components";
 import { listOperatorsType, operatorType } from "../types";
 
-const prefix = '/mobile-app-next-js'
+const prefix = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
 type Dispatcher<S> = Dispatch<SetStateAction<S>>;
 

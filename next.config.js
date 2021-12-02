@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === 'production'
+const curPath = process.env.NEXT_PUBLIC_BASE_PATH || './'
 
 module.exports = {
   reactStrictMode: true,
   exportPathMap: 'out',
-  basePath: isProd ? '/mobile-app-next-js' : './',
-  assetPrefix: isProd ? '/mobile-app-next-js' : './'
+  basePath: curPath,
+  assetPrefix: curPath
 }

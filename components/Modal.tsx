@@ -3,7 +3,7 @@ import { FormEvent, useState, Dispatch, SetStateAction, useEffect } from "react"
 import styled from "styled-components";
 import InputMask from "react-input-mask";
 
-const prefix = '/mobile-app-next-js'
+const prefix = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
 type propsType = {
   curOperator: operatorType;
